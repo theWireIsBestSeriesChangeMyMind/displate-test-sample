@@ -1,4 +1,4 @@
-package pom;
+package displate_frontEnd.pom;
 
 import displate_frontEnd.common.BasePage;
 import org.openqa.selenium.WebDriver;

@@ -12,4 +12,16 @@ public class BasePage {
         this.driver = driver;
         this.wait = new Wait(driver);
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public Wait getWait() {
+        return wait;
+    }
 }
