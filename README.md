@@ -11,7 +11,7 @@ What you need:
 - Maven
 
 From command line:  
-cd <project root>  
+cd project-root  
 mvn install  
 mvn clean test (run all tests: quick "smoke" test and e2e")  
     or  
