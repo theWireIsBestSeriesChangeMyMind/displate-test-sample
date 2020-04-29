@@ -1,4 +1,4 @@
-package displate_frontEnd.common;
+package displate_frontend.common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,5 +38,12 @@ public class Wait {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void elementToBeClickable(WebElement webElement, String value) {
+        int timeout = 10;
+        ExpectedCondition<WebElement> condition = ExpectedConditions.elementToBeClickable(webElement);
+        String timeoutMessage = "Element with name: " + value + " was not clickable after " + timeout + " seconds.";
+        waitUntilCondition(condition, timeoutMessage, timeout);
     }
 }

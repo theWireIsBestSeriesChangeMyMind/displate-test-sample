@@ -1,4 +1,4 @@
-package displate_frontEnd.infrastructure_driver;
+package displate_frontend.infrastructure_driver;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -9,22 +9,23 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Hooks {
 
-    public WebDriver driver;
+    protected static WebDriver driver;
 
     @Before
     public void setDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-        this.driver = new ChromeDriver(options);
+        driver = new ChromeDriver(options);
+        System.out.println("before");
     }
 
     @After
     public void quitDriver(){
-        this.driver.quit();
+        driver.quit();
     }
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 }
