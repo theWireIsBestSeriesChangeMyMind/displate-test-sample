@@ -28,6 +28,10 @@
                 <version>2.22.2</version>
                 <configuration>
                     <systemProperties>
+                        <property>
+                            <name>headless</name>
+                            <value>${headless}</value>
+                        </property>
                     </systemProperties>
                 </configuration>
             </plugin>

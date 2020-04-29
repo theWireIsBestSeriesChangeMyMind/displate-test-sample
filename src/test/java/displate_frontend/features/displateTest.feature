@@ -1,9 +1,11 @@
 Feature: Displate tests
 
+  @smoke
   Scenario: Simple smoke test to check if everything works fine
     Given Homepage is open
     Then Promo code is available at the top
 
+  @e2e
   Scenario: The test you requested for
     Given Homepage is open
     And User search "Nurburgring"
