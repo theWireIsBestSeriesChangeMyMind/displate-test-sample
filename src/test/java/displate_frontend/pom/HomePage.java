@@ -33,8 +33,14 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[text() = 'Select finish & add frame']")
     public WebElement selectFinishAndAddFrameButton;
 
-    @FindBy(xpath = "//div[@id = 'animatedContainer']//span[text() = 'Gloss']/..")
+    @FindBy(xpath = "//span[text() = 'Gloss'][@class = 'input-radio__label']")
     public WebElement glossyFinishRadioButton;
+
+    @FindBy(xpath = "//div[@class = 'hero-options product-page-description-container']//button/span")
+    public WebElement addToCartButton;
+
+    @FindBy(css = "a.aside-menu__item.aside-menu__item--cart")
+    public WebElement cartNavbarButton;
 
     public HomePage() {
         super("https://displate.com/");

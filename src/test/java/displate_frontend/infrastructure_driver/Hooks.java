@@ -9,23 +9,26 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Hooks {
 
-    protected static WebDriver driver;
+    public static WebDriver driver;
 
     @Before
     public void setDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
+        String headless = System.getProperty("headless");
+        if (headless != null && headless.equals("true")) {
+            options.addArguments("--headless");
+        }
+        options.addArguments("start-maximized", "--disable-popup-blocking");
         driver = new ChromeDriver(options);
-        System.out.println("before");
     }
 
     @After
-    public void quitDriver(){
+    public void quitDriver() {
         driver.quit();
     }
 
-    public static WebDriver getDriver() {
-        return driver;
-    }
+//    public static WebDriver getDriver() {
+//        return driver;
+//    }
 }
